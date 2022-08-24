@@ -33,9 +33,7 @@ namespace SmartToll1._0
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Employees emps = new();
-            emps.Show();
+            
         }
 
         private void ProductBtn_Click(object sender, EventArgs e)

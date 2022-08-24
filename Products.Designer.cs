@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,11 +48,13 @@
             this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.ProductBtn = new System.Windows.Forms.Button();
             this.transBtn = new System.Windows.Forms.Button();
             this.HomeBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ExpiryDateBox = new System.Windows.Forms.TextBox();
+            this.DelBtn = new System.Windows.Forms.Button();
+            this.UpdateBtn = new System.Windows.Forms.Button();
             this.logOutBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -64,8 +65,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel1.Controls.Add(this.ExpiryDateBox);
             this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.label7);
@@ -87,24 +88,17 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(367, 112);
+            this.checkBox1.Location = new System.Drawing.Point(132, 107);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(91, 19);
             this.checkBox1.TabIndex = 14;
             this.checkBox1.Text = "PERISHABLE";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(367, 138);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(196, 23);
-            this.dateTimePicker1.TabIndex = 13;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(287, 144);
+            this.label8.Location = new System.Drawing.Point(52, 135);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 15);
             this.label8.TabIndex = 12;
@@ -112,15 +106,15 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(367, 83);
+            this.textBox6.Location = new System.Drawing.Point(390, 127);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(119, 23);
-            this.textBox6.TabIndex = 11;
+            this.textBox6.Size = new System.Drawing.Size(128, 23);
+            this.textBox6.TabIndex = 8;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(296, 86);
+            this.label7.Location = new System.Drawing.Point(296, 130);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 15);
             this.label7.TabIndex = 10;
@@ -129,7 +123,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 119);
+            this.label6.Location = new System.Drawing.Point(270, 81);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 15);
             this.label6.TabIndex = 9;
@@ -146,24 +140,24 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(132, 116);
+            this.textBox5.Location = new System.Drawing.Point(390, 78);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(120, 23);
-            this.textBox5.TabIndex = 7;
+            this.textBox5.Size = new System.Drawing.Size(132, 23);
+            this.textBox5.TabIndex = 9;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(132, 78);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(120, 23);
-            this.textBox4.TabIndex = 6;
+            this.textBox4.Size = new System.Drawing.Size(132, 23);
+            this.textBox4.TabIndex = 7;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(367, 42);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(119, 23);
-            this.textBox3.TabIndex = 5;
+            this.textBox3.Size = new System.Drawing.Size(155, 23);
+            this.textBox3.TabIndex = 6;
             // 
             // label4
             // 
@@ -178,8 +172,8 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(132, 42);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 23);
-            this.textBox2.TabIndex = 3;
+            this.textBox2.Size = new System.Drawing.Size(132, 23);
+            this.textBox2.TabIndex = 5;
             // 
             // label3
             // 
@@ -203,8 +197,8 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(132, 8);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(354, 23);
-            this.textBox1.TabIndex = 0;
+            this.textBox1.Size = new System.Drawing.Size(390, 23);
+            this.textBox1.TabIndex = 4;
             // 
             // tableLayoutPanel1
             // 
@@ -247,7 +241,6 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.ProductBtn, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.transBtn, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.HomeBtn, 0, 1);
@@ -273,17 +266,6 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "SALES REP";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(4, 168);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 37);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "EMPLOYEES";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ProductBtn
             // 
@@ -322,25 +304,59 @@
             this.dataGridView1.Location = new System.Drawing.Point(160, 227);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(671, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(1155, 434);
             this.dataGridView1.TabIndex = 4;
+            // 
+            // ExpiryDateBox
+            // 
+            this.ExpiryDateBox.Location = new System.Drawing.Point(132, 132);
+            this.ExpiryDateBox.Name = "ExpiryDateBox";
+            this.ExpiryDateBox.PlaceholderText = "YYYY/MM/DD";
+            this.ExpiryDateBox.Size = new System.Drawing.Size(132, 23);
+            this.ExpiryDateBox.TabIndex = 15;
+            // 
+            // DelBtn
+            // 
+            this.DelBtn.BackColor = System.Drawing.Color.Brown;
+            this.DelBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DelBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.DelBtn.Location = new System.Drawing.Point(517, 680);
+            this.DelBtn.Name = "DelBtn";
+            this.DelBtn.Size = new System.Drawing.Size(119, 35);
+            this.DelBtn.TabIndex = 16;
+            this.DelBtn.Text = "DELETE";
+            this.DelBtn.UseVisualStyleBackColor = false;
+            // 
+            // UpdateBtn
+            // 
+            this.UpdateBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UpdateBtn.Location = new System.Drawing.Point(355, 682);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(119, 35);
+            this.UpdateBtn.TabIndex = 15;
+            this.UpdateBtn.Text = "UPDATE";
+            this.UpdateBtn.UseVisualStyleBackColor = true;
             // 
             // logOutBtn
             // 
+            this.logOutBtn.BackColor = System.Drawing.Color.Brown;
             this.logOutBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.logOutBtn.Location = new System.Drawing.Point(12, 452);
+            this.logOutBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.logOutBtn.Location = new System.Drawing.Point(12, 680);
             this.logOutBtn.Name = "logOutBtn";
             this.logOutBtn.Size = new System.Drawing.Size(134, 37);
-            this.logOutBtn.TabIndex = 5;
+            this.logOutBtn.TabIndex = 14;
             this.logOutBtn.Text = "LOG OUT";
-            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.UseVisualStyleBackColor = false;
             // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(843, 501);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.DelBtn);
+            this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -365,14 +381,12 @@
         private Button button4;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label2;
-        private Button button1;
         private Button ProductBtn;
         private Button transBtn;
         private Button HomeBtn;
         private Label label1;
         private TextBox textBox1;
         private CheckBox checkBox1;
-        private DateTimePicker dateTimePicker1;
         private Label label8;
         private TextBox textBox6;
         private Label label7;
@@ -385,6 +399,9 @@
         private TextBox textBox2;
         private Label label3;
         private DataGridView dataGridView1;
+        private TextBox ExpiryDateBox;
+        private Button DelBtn;
+        private Button UpdateBtn;
         private Button logOutBtn;
     }
 }

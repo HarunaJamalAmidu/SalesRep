@@ -18,9 +18,7 @@ namespace SalesRep
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Employees emps = new();
-            emps.Show();
+            
         }
     }
 }

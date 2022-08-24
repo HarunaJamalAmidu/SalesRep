@@ -31,19 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.rand1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.ProductBtn = new System.Windows.Forms.Button();
             this.transBtn = new System.Windows.Forms.Button();
             this.HomeBtn = new System.Windows.Forms.Button();
-            this.ReportsGenPanel = new System.Windows.Forms.Panel();
-            this.DBcomboBoxSelector = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ReportGenBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.passwordBox = new System.Windows.Forms.TextBox();
@@ -67,8 +57,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.logOutBtn = new System.Windows.Forms.Button();
             this.EmployeedataGridView = new System.Windows.Forms.DataGridView();
+            this.UpdateBtn = new System.Windows.Forms.Button();
+            this.DelBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.ReportsGenPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeedataGridView)).BeginInit();
@@ -80,20 +71,18 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.rand1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button4, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.transBtn, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.HomeBtn, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.ProductBtn, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.transBtn, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.HomeBtn, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(142, 209);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(142, 165);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // rand1
@@ -106,17 +95,6 @@
             this.rand1.TabIndex = 7;
             this.rand1.Text = "SALES REP";
             this.rand1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(4, 168);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(134, 37);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "EMPLOYEES";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // ProductBtn
             // 
@@ -132,7 +110,7 @@
             // transBtn
             // 
             this.transBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.transBtn.Location = new System.Drawing.Point(4, 86);
+            this.transBtn.Location = new System.Drawing.Point(4, 45);
             this.transBtn.Name = "transBtn";
             this.transBtn.Size = new System.Drawing.Size(134, 34);
             this.transBtn.TabIndex = 2;
@@ -142,106 +120,13 @@
             // HomeBtn
             // 
             this.HomeBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.HomeBtn.Location = new System.Drawing.Point(4, 45);
+            this.HomeBtn.Location = new System.Drawing.Point(4, 86);
             this.HomeBtn.Name = "HomeBtn";
             this.HomeBtn.Size = new System.Drawing.Size(134, 34);
             this.HomeBtn.TabIndex = 1;
-            this.HomeBtn.Text = "HOME";
+            this.HomeBtn.Text = "EMPLOYEES";
             this.HomeBtn.UseVisualStyleBackColor = true;
             this.HomeBtn.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // ReportsGenPanel
-            // 
-            this.ReportsGenPanel.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ReportsGenPanel.Controls.Add(this.DBcomboBoxSelector);
-            this.ReportsGenPanel.Controls.Add(this.label12);
-            this.ReportsGenPanel.Controls.Add(this.dateTimePicker2);
-            this.ReportsGenPanel.Controls.Add(this.label3);
-            this.ReportsGenPanel.Controls.Add(this.label2);
-            this.ReportsGenPanel.Controls.Add(this.dateTimePicker1);
-            this.ReportsGenPanel.Controls.Add(this.label1);
-            this.ReportsGenPanel.Controls.Add(this.ReportGenBtn);
-            this.ReportsGenPanel.Location = new System.Drawing.Point(496, 295);
-            this.ReportsGenPanel.Name = "ReportsGenPanel";
-            this.ReportsGenPanel.Size = new System.Drawing.Size(335, 194);
-            this.ReportsGenPanel.TabIndex = 1;
-            this.ReportsGenPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ReportsGenPanel_Paint);
-            // 
-            // DBcomboBoxSelector
-            // 
-            this.DBcomboBoxSelector.FormattingEnabled = true;
-            this.DBcomboBoxSelector.Location = new System.Drawing.Point(84, 43);
-            this.DBcomboBoxSelector.Name = "DBcomboBoxSelector";
-            this.DBcomboBoxSelector.Size = new System.Drawing.Size(184, 23);
-            this.DBcomboBoxSelector.TabIndex = 8;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label12.Location = new System.Drawing.Point(5, 43);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 17);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "DATABASE";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(80, 112);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(188, 23);
-            this.dateTimePicker2.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(15, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "TO";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(11, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "FROM";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(80, 83);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(188, 23);
-            this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(5, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 21);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "REPORTS";
-            // 
-            // ReportGenBtn
-            // 
-            this.ReportGenBtn.Location = new System.Drawing.Point(93, 141);
-            this.ReportGenBtn.Name = "ReportGenBtn";
-            this.ReportGenBtn.Size = new System.Drawing.Size(119, 35);
-            this.ReportGenBtn.TabIndex = 2;
-            this.ReportGenBtn.Text = "GENERATE";
-            this.ReportGenBtn.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -292,9 +177,9 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(176, 90);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(81, 15);
+            this.label14.Size = new System.Drawing.Size(84, 15);
             this.label14.TabIndex = 27;
-            this.label14.Text = "GENDER(M/F)";
+            this.label14.Text = "GENDER (M/F)";
             // 
             // GenderBox
             // 
@@ -307,13 +192,15 @@
             // 
             this.RoleBox.Location = new System.Drawing.Point(177, 204);
             this.RoleBox.Name = "RoleBox";
-            this.RoleBox.Size = new System.Drawing.Size(158, 23);
+            this.RoleBox.PlaceholderText = "ADMIN/USER";
+            this.RoleBox.Size = new System.Drawing.Size(174, 23);
             this.RoleBox.TabIndex = 10;
             // 
             // BDaybox
             // 
             this.BDaybox.Location = new System.Drawing.Point(13, 204);
             this.BDaybox.Name = "BDaybox";
+            this.BDaybox.PlaceholderText = "YYYY/MM/DD";
             this.BDaybox.Size = new System.Drawing.Size(158, 23);
             this.BDaybox.TabIndex = 9;
             // 
@@ -347,6 +234,7 @@
             // 
             // ClrBtn
             // 
+            this.ClrBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ClrBtn.Location = new System.Drawing.Point(461, 233);
             this.ClrBtn.Name = "ClrBtn";
             this.ClrBtn.Size = new System.Drawing.Size(119, 35);
@@ -373,6 +261,7 @@
             // 
             // AddEmpBtn
             // 
+            this.AddEmpBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddEmpBtn.Location = new System.Drawing.Point(336, 233);
             this.AddEmpBtn.Name = "AddEmpBtn";
             this.AddEmpBtn.Size = new System.Drawing.Size(119, 35);
@@ -385,6 +274,7 @@
             // 
             this.PhoneNoBox.Location = new System.Drawing.Point(13, 108);
             this.PhoneNoBox.Name = "PhoneNoBox";
+            this.PhoneNoBox.PlaceholderText = "233";
             this.PhoneNoBox.Size = new System.Drawing.Size(158, 23);
             this.PhoneNoBox.TabIndex = 6;
             // 
@@ -441,40 +331,63 @@
             // 
             // logOutBtn
             // 
+            this.logOutBtn.BackColor = System.Drawing.Color.Brown;
             this.logOutBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.logOutBtn.Location = new System.Drawing.Point(20, 524);
+            this.logOutBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.logOutBtn.Location = new System.Drawing.Point(11, 680);
             this.logOutBtn.Name = "logOutBtn";
             this.logOutBtn.Size = new System.Drawing.Size(134, 37);
             this.logOutBtn.TabIndex = 4;
             this.logOutBtn.Text = "LOG OUT";
-            this.logOutBtn.UseVisualStyleBackColor = true;
+            this.logOutBtn.UseVisualStyleBackColor = false;
             // 
             // EmployeedataGridView
             // 
             this.EmployeedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmployeedataGridView.Location = new System.Drawing.Point(231, 295);
+            this.EmployeedataGridView.Location = new System.Drawing.Point(231, 304);
             this.EmployeedataGridView.Name = "EmployeedataGridView";
             this.EmployeedataGridView.RowTemplate.Height = 25;
-            this.EmployeedataGridView.Size = new System.Drawing.Size(257, 194);
+            this.EmployeedataGridView.Size = new System.Drawing.Size(1051, 351);
             this.EmployeedataGridView.TabIndex = 5;
+            // 
+            // UpdateBtn
+            // 
+            this.UpdateBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UpdateBtn.Location = new System.Drawing.Point(246, 680);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(119, 35);
+            this.UpdateBtn.TabIndex = 12;
+            this.UpdateBtn.Text = "UPDATE";
+            this.UpdateBtn.UseVisualStyleBackColor = true;
+            // 
+            // DelBtn
+            // 
+            this.DelBtn.BackColor = System.Drawing.Color.Brown;
+            this.DelBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DelBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.DelBtn.Location = new System.Drawing.Point(385, 680);
+            this.DelBtn.Name = "DelBtn";
+            this.DelBtn.Size = new System.Drawing.Size(119, 35);
+            this.DelBtn.TabIndex = 13;
+            this.DelBtn.Text = "DELETE";
+            this.DelBtn.UseVisualStyleBackColor = false;
             // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(843, 501);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.DelBtn);
+            this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.EmployeedataGridView);
             this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.ReportsGenPanel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Admin";
             this.Text = "ADMIN";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.ReportsGenPanel.ResumeLayout(false);
-            this.ReportsGenPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -486,17 +399,9 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Button button4;
         private Button ProductBtn;
         private Button transBtn;
         private Button HomeBtn;
-        private Panel ReportsGenPanel;
-        private Label label2;
-        private Label label1;
-        private Button ReportGenBtn;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
-        private Label label3;
         private Panel panel1;
         private TextBox PhoneNoBox;
         private Label label7;
@@ -513,8 +418,6 @@
         private Label label11;
         private Label label9;
         private Label rand1;
-        private ComboBox DBcomboBoxSelector;
-        private Label label12;
         private Button logOutBtn;
         private TextBox BDaybox;
         private TextBox RoleBox;
@@ -523,5 +426,7 @@
         private Label label8;
         private TextBox passwordBox;
         private DataGridView EmployeedataGridView;
+        private Button UpdateBtn;
+        private Button DelBtn;
     }
 }
