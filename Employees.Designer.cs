@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employees));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.passwordBox = new System.Windows.Forms.TextBox();
+            this.RoleBox2 = new System.Windows.Forms.TextBox();
+            this.BDaybox = new System.Windows.Forms.TextBox();
+            this.GenderBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.RoleBox = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -53,9 +58,6 @@
             this.HomeBtn = new System.Windows.Forms.Button();
             this.EmployeedataGridView = new System.Windows.Forms.DataGridView();
             this.logOutBtn = new System.Windows.Forms.Button();
-            this.GenderBox = new System.Windows.Forms.TextBox();
-            this.BDaybox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -65,7 +67,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.passwordBox);
+            this.panel1.Controls.Add(this.RoleBox2);
             this.panel1.Controls.Add(this.BDaybox);
             this.panel1.Controls.Add(this.GenderBox);
             this.panel1.Controls.Add(this.label11);
@@ -85,8 +89,45 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(188, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(643, 235);
+            this.panel1.Size = new System.Drawing.Size(643, 280);
             this.panel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 230);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 15);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "PASSWORD";
+            // 
+            // passwordBox
+            // 
+            this.passwordBox.Location = new System.Drawing.Point(13, 244);
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.Size = new System.Drawing.Size(158, 23);
+            this.passwordBox.TabIndex = 30;
+            // 
+            // RoleBox2
+            // 
+            this.RoleBox2.Location = new System.Drawing.Point(177, 204);
+            this.RoleBox2.Name = "RoleBox2";
+            this.RoleBox2.Size = new System.Drawing.Size(174, 23);
+            this.RoleBox2.TabIndex = 24;
+            // 
+            // BDaybox
+            // 
+            this.BDaybox.Location = new System.Drawing.Point(13, 204);
+            this.BDaybox.Name = "BDaybox";
+            this.BDaybox.Size = new System.Drawing.Size(158, 23);
+            this.BDaybox.TabIndex = 23;
+            // 
+            // GenderBox
+            // 
+            this.GenderBox.Location = new System.Drawing.Point(177, 108);
+            this.GenderBox.Name = "GenderBox";
+            this.GenderBox.Size = new System.Drawing.Size(174, 23);
+            this.GenderBox.TabIndex = 22;
             // 
             // label11
             // 
@@ -261,6 +302,7 @@
             this.button4.TabIndex = 2;
             this.button4.Text = "EMPLOYEES";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // ProductBtn
             // 
@@ -271,6 +313,7 @@
             this.ProductBtn.TabIndex = 3;
             this.ProductBtn.Text = "PRODUCTS";
             this.ProductBtn.UseVisualStyleBackColor = true;
+            this.ProductBtn.Click += new System.EventHandler(this.ProductBtn_Click);
             // 
             // transBtn
             // 
@@ -295,10 +338,10 @@
             // EmployeedataGridView
             // 
             this.EmployeedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmployeedataGridView.Location = new System.Drawing.Point(188, 253);
+            this.EmployeedataGridView.Location = new System.Drawing.Point(188, 298);
             this.EmployeedataGridView.Name = "EmployeedataGridView";
             this.EmployeedataGridView.RowTemplate.Height = 25;
-            this.EmployeedataGridView.Size = new System.Drawing.Size(643, 236);
+            this.EmployeedataGridView.Size = new System.Drawing.Size(643, 191);
             this.EmployeedataGridView.TabIndex = 5;
             // 
             // logOutBtn
@@ -310,27 +353,6 @@
             this.logOutBtn.TabIndex = 6;
             this.logOutBtn.Text = "LOG OUT";
             this.logOutBtn.UseVisualStyleBackColor = true;
-            // 
-            // GenderBox
-            // 
-            this.GenderBox.Location = new System.Drawing.Point(177, 108);
-            this.GenderBox.Name = "GenderBox";
-            this.GenderBox.Size = new System.Drawing.Size(158, 23);
-            this.GenderBox.TabIndex = 22;
-            // 
-            // BDaybox
-            // 
-            this.BDaybox.Location = new System.Drawing.Point(13, 204);
-            this.BDaybox.Name = "BDaybox";
-            this.BDaybox.Size = new System.Drawing.Size(158, 23);
-            this.BDaybox.TabIndex = 23;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(177, 204);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 23);
-            this.textBox2.TabIndex = 24;
             // 
             // Employees
             // 
@@ -380,8 +402,10 @@
         private Button HomeBtn;
         private DataGridView EmployeedataGridView;
         private Button logOutBtn;
-        private TextBox textBox2;
+        private TextBox RoleBox2;
         private TextBox BDaybox;
         private TextBox GenderBox;
+        private Label label1;
+        private TextBox passwordBox;
     }
 }

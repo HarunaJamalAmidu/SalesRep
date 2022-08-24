@@ -13,14 +13,14 @@ namespace SalesRep
 {
     public partial class Employees : Form
     {
-        public static string connectionString = "server=localhost;database=inventory_system;uid=root; pwd=\"\";";
+        public static string connectionString = "server=localhost;database=salesrep;uid=root; pwd=\"\";";
         public static MySqlConnection connection = new MySqlConnection(connectionString);
         public Employees()
         {
             InitializeComponent();
             //using (MySqlConnection connection = new MySqlConnection(connectionString)) 
             // { 
-            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM attendant WHERE 1", connection);
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM employeedata WHERE 1", connection);
             DataTable dt = new DataTable();
             mySqlDataAdapter.Fill(dt);
 
@@ -33,9 +33,11 @@ namespace SalesRep
             SurNameBox.Text= "";
             GivenNameBox.Text = "";
             PhoneNoBox.Text = "";
-            GenderComboBox.SelectedIndex = 0;
             EmailBox.Text = "";
-            
+            BDaybox.Text = "";
+            RoleBox2.Text = "";
+
+
         }
 
         private void AddEmpBtn_Click(object sender, EventArgs e)
@@ -50,31 +52,44 @@ namespace SalesRep
                 }
                 else
                 {
-                    string query = "INSERT INTO attendant`(`fullname, username, passwd, dob, gender, phone, address, `admin_id`) VALUES ('" + fullnameTxt.Text + "','" + usernameTxt.Text + "','" + passwordTxt.Text + "', '" + dobTxt.Text + "', '" + genderTxt.Text + "', '" + phoneTxt.Text + "', '" + addressTxt.Text + "', '" + adminIdText.Text + "' )";
+                    string query = "INSERT INTO `employeedata`(`lastName`, `givenName`, `phoneNumber`, `gender`, `email`, `birthDate`, `role`, `password`)VALUES ('" + SurNameBox.Text + "','" + GivenNameBox.Text + "','" + PhoneNoBox.Text + "', '" + GenderBox.Text + "', '" + EmailBox.Text + "', '" + BDaybox.Text + "', '" + RoleBox.Text + "', '" + passwordBox.Text + "')";
                     command = new MySqlCommand(query, connection);
                     command.ExecuteNonQuery();
 
                     MessageBox.Show("Attendant Added Succesfully");
                     connection.Close();
-                    fullnameTxt.Text = String.Empty;
-                    usernameTxt.Text = String.Empty;
-                    passwordTxt.Text = String.Empty;
-                    dobTxt.Text = String.Empty;
-                    genderTxt.Text = String.Empty;
-                    phoneTxt.Text = String.Empty;
-                    addressTxt.Text = String.Empty;
-                    adminIdText.Text = String.Empty;
+                    SurNameBox.Text = String.Empty;
+                    GivenNameBox.Text = String.Empty;
+                    PhoneNoBox.Text = String.Empty;
+                    GenderBox.Text = String.Empty;
+                    EmailBox.Text = String.Empty;
+                    BDaybox.Text = String.Empty;
+                    RoleBox.Text = String.Empty;
 
-                    fullnameTxt.Focus();
+                    SurNameBox.Focus();
                 }
 
 
-                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM attendant WHERE 1", connection);
+                MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM employeedata WHERE 1", connection);
                 DataTable dt = new DataTable();
                 mySqlDataAdapter.Fill(dt);
 
-                attendantsDataGrid.DataSource = dt;
+                EmployeedataGridView.DataSource = dt;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Employees emps = new();
+            emps.Show();
+        }
+
+        private void ProductBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Products prod = new();
+            prod.Show();
         }
     }
 }
