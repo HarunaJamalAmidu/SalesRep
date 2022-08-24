@@ -51,9 +51,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.ProductBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.transBtn = new System.Windows.Forms.Button();
             this.HomeBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.logOutBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -248,7 +249,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.button1, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.ProductBtn, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.transBtn, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.HomeBtn, 0, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -293,14 +294,15 @@
             this.ProductBtn.Text = "PRODUCTS";
             this.ProductBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // transBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(4, 86);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 34);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = true;
+            this.transBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.transBtn.Location = new System.Drawing.Point(4, 86);
+            this.transBtn.Name = "transBtn";
+            this.transBtn.Size = new System.Drawing.Size(134, 34);
+            this.transBtn.TabIndex = 2;
+            this.transBtn.Text = "TRANSACTIONS";
+            this.transBtn.UseVisualStyleBackColor = true;
             // 
             // HomeBtn
             // 
@@ -316,22 +318,33 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 227);
+            this.dataGridView1.Location = new System.Drawing.Point(160, 227);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(819, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(671, 262);
             this.dataGridView1.TabIndex = 4;
             // 
-            // ProductsForm
+            // logOutBtn
+            // 
+            this.logOutBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.logOutBtn.Location = new System.Drawing.Point(12, 452);
+            this.logOutBtn.Name = "logOutBtn";
+            this.logOutBtn.Size = new System.Drawing.Size(134, 37);
+            this.logOutBtn.TabIndex = 5;
+            this.logOutBtn.Text = "LOG OUT";
+            this.logOutBtn.UseVisualStyleBackColor = true;
+            // 
+            // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(843, 501);
+            this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.panel1);
-            this.Name = "ProductsForm";
+            this.Name = "Products";
             this.Text = "Products";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -353,7 +366,7 @@
         private Label label2;
         private Button button1;
         private Button ProductBtn;
-        private Button button2;
+        private Button transBtn;
         private Button HomeBtn;
         private Label label1;
         private TextBox textBox1;
@@ -371,5 +384,6 @@
         private TextBox textBox2;
         private Label label3;
         private DataGridView dataGridView1;
+        private Button logOutBtn;
     }
 }

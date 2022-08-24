@@ -31,5 +31,14 @@
         {
           
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SurNameBox.Text = "";
+            GivenNameBox.Text = "";
+            PhoneNoBox.Text = "";
+            GenderComboBox.SelectedIndex = 0;
+            EmailBox.Text = "";
+        }
     }
 }
