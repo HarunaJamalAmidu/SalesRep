@@ -38,16 +38,18 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.rand1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.RoleBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginBtn
             // 
             this.LoginBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LoginBtn.Location = new System.Drawing.Point(459, 445);
+            this.LoginBtn.Location = new System.Drawing.Point(403, 438);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(119, 35);
-            this.LoginBtn.TabIndex = 29;
+            this.LoginBtn.TabIndex = 5;
             this.LoginBtn.Text = "LOG IN";
             this.LoginBtn.UseVisualStyleBackColor = true;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
@@ -55,10 +57,10 @@
             // ClrBtn
             // 
             this.ClrBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ClrBtn.Location = new System.Drawing.Point(269, 445);
+            this.ClrBtn.Location = new System.Drawing.Point(296, 438);
             this.ClrBtn.Name = "ClrBtn";
-            this.ClrBtn.Size = new System.Drawing.Size(119, 35);
-            this.ClrBtn.TabIndex = 28;
+            this.ClrBtn.Size = new System.Drawing.Size(101, 35);
+            this.ClrBtn.TabIndex = 4;
             this.ClrBtn.Text = "CLEAR";
             this.ClrBtn.UseVisualStyleBackColor = true;
             this.ClrBtn.Click += new System.EventHandler(this.ClrBtn_Click);
@@ -66,27 +68,27 @@
             // PasswordBox
             // 
             this.PasswordBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PasswordBox.Location = new System.Drawing.Point(269, 393);
+            this.PasswordBox.Location = new System.Drawing.Point(276, 362);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.PasswordChar = '*';
             this.PasswordBox.PlaceholderText = "Enter your password";
-            this.PasswordBox.Size = new System.Drawing.Size(309, 23);
-            this.PasswordBox.TabIndex = 27;
+            this.PasswordBox.Size = new System.Drawing.Size(273, 23);
+            this.PasswordBox.TabIndex = 2;
             // 
             // EmailBox
             // 
             this.EmailBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.EmailBox.Location = new System.Drawing.Point(269, 365);
+            this.EmailBox.Location = new System.Drawing.Point(276, 333);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.PlaceholderText = "Enter your email";
-            this.EmailBox.Size = new System.Drawing.Size(309, 23);
-            this.EmailBox.TabIndex = 26;
+            this.EmailBox.Size = new System.Drawing.Size(273, 23);
+            this.EmailBox.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(155, 391);
+            this.label3.Location = new System.Drawing.Point(172, 360);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 21);
             this.label3.TabIndex = 25;
@@ -96,7 +98,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(195, 363);
+            this.label2.Location = new System.Drawing.Point(212, 331);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 21);
             this.label2.TabIndex = 24;
@@ -133,11 +135,32 @@
             this.rand1.Text = "SALES REP";
             this.rand1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Form1
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(221, 389);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 21);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "ROLE";
+            // 
+            // RoleBox
+            // 
+            this.RoleBox.Location = new System.Drawing.Point(276, 391);
+            this.RoleBox.Name = "RoleBox";
+            this.RoleBox.PlaceholderText = "ADMIN/USER";
+            this.RoleBox.Size = new System.Drawing.Size(273, 23);
+            this.RoleBox.TabIndex = 3;
+            // 
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(843, 501);
+            this.Controls.Add(this.RoleBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.ClrBtn);
             this.Controls.Add(this.PasswordBox);
@@ -147,8 +170,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rand1);
-            this.Name = "Form1";
+            this.Name = "Login";
             this.Text = "SALES REP";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,5 +190,7 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Label rand1;
+        private Label label4;
+        private TextBox RoleBox;
     }
 }
