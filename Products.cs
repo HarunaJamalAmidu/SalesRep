@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SalesRep
 {
@@ -40,13 +41,13 @@ namespace SalesRep
             {
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
-                if (ProductNameBox.Text == "" & ProductQuantityBox.Text == "" & ReorderLevelBox.Text == "" & CostPriceBox.Text == "" & SellingPriceBox.Text == "" & ExpiryDateBox.Text == "")
+                if (ProductNameBox.Text == "" & ProductQuantityBox.Text == "" & ReorderLevelBox.Text == "" & CostPriceBox.Text == "" & SellingPriceBox.Text == "" & BarCodeBox.Text == "")
                 {
                     MessageBox.Show("Please fill out all fields");
                 }
                 else
                 {
-                    string query = "INSERT INTO `products`(`productName`, `productQuantity`, `unitCostPrice`, `unitSellingPrice`, `reorderLevel`, `expiryDate`)VALUES ('" + ProductNameBox.Text + "','" + ProductQuantityBox.Text + "','" + ReorderLevelBox.Text + "', '" + CostPriceBox.Text + "', '" + SellingPriceBox.Text + "', '" + ExpiryDateBox.Text + "')";
+                    string query = "INSERT INTO `products`(`productName`, `productQuantity`, `unitCostPrice`, `unitSellingPrice`, `reorderLevel`, `barCode`)VALUES ('" + ProductNameBox.Text + "','" + ProductQuantityBox.Text + "','" + ReorderLevelBox.Text + "', '" + CostPriceBox.Text + "', '" + SellingPriceBox.Text + "', '" + BarCodeBox.Text + "')";
                     command = new MySqlCommand(query, connection);
                     command.ExecuteNonQuery();
 
@@ -57,7 +58,7 @@ namespace SalesRep
                     ReorderLevelBox.Text = String.Empty;
                     CostPriceBox.Text = String.Empty;
                     SellingPriceBox.Text = String.Empty;
-                    ExpiryDateBox.Text = String.Empty;
+                    BarCodeBox.Text = String.Empty;
                     
                     ProductNameBox.Focus();
                 }
@@ -78,7 +79,8 @@ namespace SalesRep
             ReorderLevelBox.Text = "";
             CostPriceBox.Text = "";
             SellingPriceBox.Text = "";
-            ExpiryDateBox.Text = "";
+            BarCodeBox.Text = "";
+            MiddleBox.Text = "";
         }
 
         private void ProductBtn_Click(object sender, EventArgs e)
@@ -92,25 +94,32 @@ namespace SalesRep
             {
                 connection.Open();
                 MySqlCommand command = new MySqlCommand();
-                if (ProductNameBox.Text == "" & ProductQuantityBox.Text == "" & ReorderLevelBox.Text == "" & CostPriceBox.Text == "" & SellingPriceBox.Text == "" & ExpiryDateBox.Text == "")
+                if (ProductNameBox.Text == "" & ProductQuantityBox.Text == "" & ReorderLevelBox.Text == "" & CostPriceBox.Text == "" & SellingPriceBox.Text == "" & BarCodeBox.Text == "")
                 {
                     MessageBox.Show("Please fill out all fields");
                 }
                 else
                 {
-                    string query = "UPDATE `products` SET `productName`= '" + ProductNameBox.Text + "',`productQuantity`= '" + ProductQuantityBox.Text + "',`unitCostPrice`= '" + CostPriceBox.Text + "',`unitSellingPrice`= '" + SellingPriceBox.Text + "',`reorderLevel`= '" + ReorderLevelBox.Text + "',`expiryDate`= '" + ExpiryDateBox.Text + "' WHERE 1";
+                    string query = "UPDATE `products` SET `productName`='" + ProductNameBox.Text + "',`productQuantity`= productQuantity + '" + ProductQuantityBox.Text + "',`unitCostPrice`='" + CostPriceBox.Text + "',`unitSellingPrice`='" + SellingPriceBox.Text + "',`reorderLevel`='" + ReorderLevelBox.Text + "',`barCode`='" + BarCodeBox.Text + "' WHERE `productId`='" + MiddleBox.Text+"'"; 
                     command = new MySqlCommand(query, connection);
                     command.ExecuteNonQuery();
                     MessageBox.Show("SUCCESSFUL");
                     connection.Close();
+
                     ProductNameBox.Text = String.Empty;
                     ProductQuantityBox.Text = String.Empty;
                     ReorderLevelBox.Text = String.Empty;
                     CostPriceBox.Text = String.Empty;
                     SellingPriceBox.Text = String.Empty;
-                    ExpiryDateBox.Text = String.Empty;
-                    
+                    BarCodeBox.Text = String.Empty;
+                    MiddleBox.Text = String.Empty;
                     ProductNameBox.Focus();
+
+                    MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM products WHERE 1", connection);
+                    DataTable dt = new DataTable();
+                    mySqlDataAdapter.Fill(dt);
+
+                    ProductsDataGridView.DataSource = dt;
                 }
             }
         }
@@ -157,6 +166,21 @@ namespace SalesRep
                 DataTable dt = new DataTable();
                 mySqlDataAdapter.Fill(dt);
                 ProductsDataGridView.DataSource = dt;
+            }
+        }
+
+        private void ProductsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.ProductsDataGridView.Rows[e.RowIndex];
+                MiddleBox.Text =          row.Cells[0].Value.ToString();
+                ProductNameBox.Text =     row.Cells[1].Value.ToString();
+                ProductQuantityBox.Text = row.Cells[2].Value.ToString();
+                CostPriceBox.Text =       row.Cells[3].Value.ToString();
+                SellingPriceBox.Text =    row.Cells[4].Value.ToString();
+                ReorderLevelBox.Text =    row.Cells[5].Value.ToString();
+                BarCodeBox.Text =         row.Cells[6].Value.ToString();
             }
         }
     }

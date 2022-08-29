@@ -26,7 +26,7 @@ namespace SalesRep
             string UserEmail, userPassword, roleChecker;
             UserEmail = EmailBox.Text;
             userPassword = PasswordBox.Text;
-            roleChecker = RoleBox.Text;
+            roleChecker = RoleBox.Text.ToUpper();
 
             try
             {
@@ -40,19 +40,19 @@ namespace SalesRep
                 {
                     UserEmail = EmailBox.Text;
                     userPassword = PasswordBox.Text;
-                    roleChecker = RoleBox.Text;
+                    roleChecker = RoleBox.Text.ToUpper();
                     
-                    if (RoleBox.Text == "ADMIN")
+                    if (roleChecker == "ADMIN")
                     {
                         this.Hide();
                         ManInTheMiddle mitm = new();
                         mitm.Show();
                     }
                     
-                    if (RoleBox.Text == "USER")
+                    if (roleChecker == "USER")
                     {
                         this.Hide();
-                        User user = new();
+                        Sales user = new();
                         user.Show();
                     }
                 }

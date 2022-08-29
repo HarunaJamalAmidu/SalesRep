@@ -36,7 +36,7 @@ namespace SalesRep
                 }
                 else
                 {
-                    string query = "INSERT INTO `employeedata`(`lastName`, `givenName`, `phoneNumber`, `gender`, `email`, `birthDate`, `role`, `password`)VALUES ('" + SurNameBox.Text + "','" + GivenNameBox.Text + "','" + PhoneNoBox.Text + "', '" + GenderBox.Text + "', '" + EmailBox.Text + "', '" + BDaybox.Text + "', '" + RoleBox.Text + "', '" + passwordBox.Text + "')";
+                    string query = "INSERT INTO `employeedata`(`lastName`, `givenName`, `phoneNumber`, `gender`, `email`, `birthDate`, `role`, `password`)VALUES ('" + SurNameBox.Text + "','" + GivenNameBox.Text + "','" + PhoneNoBox.Text + "', '" + GenderBox.Text + "', '" + EmailBox.Text + "', '" + BDaybox.Text.ToString() + "', '" + RoleBox.Text + "', '" + passwordBox.Text + "')";
                     command = new MySqlCommand(query, connection);
                     command.ExecuteNonQuery();
 
@@ -98,12 +98,25 @@ namespace SalesRep
             BDaybox.Text = "";
             RoleBox.Text = "";
             passwordBox.Text = "";
+            MiddleBox.Text = "";
 
         }
 
         private void EmployeeDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.EmployeeDataGridView.Rows[e.RowIndex];
+                MiddleBox.Text    = row.Cells[0].Value.ToString();
+                SurNameBox.Text   = row.Cells[1].Value.ToString();
+                GivenNameBox.Text = row.Cells[2].Value.ToString();
+                PhoneNoBox.Text   = row.Cells[3].Value.ToString();
+                GenderBox.Text    = row.Cells[4].Value.ToString();
+                EmailBox.Text     = row.Cells[5].Value.ToString();
+                BDaybox.Text      = row.Cells[6].Value.ToString();
+                RoleBox.Text      = row.Cells[7].Value.ToString();
+                passwordBox.Text  = row.Cells[8].Value.ToString();
+            }
         }
 
         private void DelBtn_Click(object sender, EventArgs e)
@@ -127,6 +140,43 @@ namespace SalesRep
                 DataTable dt = new DataTable();
                 mySqlDataAdapter.Fill(dt);
                 EmployeeDataGridView.DataSource = dt;
+            }
+        }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand command = new MySqlCommand();
+                if (SurNameBox.Text == "" & GivenNameBox.Text == "" & PhoneNoBox.Text == "" & GenderBox.Text == "" & EmailBox.Text == "" & BDaybox.Text == "" & RoleBox.Text == "" & passwordBox.Text == "")
+                {
+                    MessageBox.Show("Please fill out all fields");
+                }
+                else
+                {
+                    string query = " UPDATE `employeedata` SET `lastName`='"+ SurNameBox.Text + "',`givenName`='" + GivenNameBox.Text + "',`phoneNumber`='" + PhoneNoBox.Text + "',`gender`='" + GenderBox.Text + "',`email`='" + EmailBox.Text + "',`birthDate`='" + BDaybox.Text + "',`role`='" + RoleBox.Text + "',`password`='" + passwordBox.Text + "' WHERE `employeeId`='" + MiddleBox.Text + "'";
+                    command = new MySqlCommand(query, connection);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("SUCCESSFUL");
+                    connection.Close();
+
+                    SurNameBox.Text = String.Empty;
+                    GivenNameBox.Text = String.Empty;
+                    PhoneNoBox.Text = String.Empty;
+                    GenderBox.Text = String.Empty;
+                    EmailBox.Text = String.Empty;
+                    BDaybox.Text = String.Empty;
+                    RoleBox.Text = String.Empty;
+                    passwordBox.Text = String.Empty;
+                    SurNameBox.Focus();
+
+                    MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("SELECT * FROM employeedata WHERE 1", connection);
+                    DataTable dt = new DataTable();
+                    mySqlDataAdapter.Fill(dt);
+
+                    EmployeeDataGridView.DataSource = dt;
+                }
             }
         }
     }

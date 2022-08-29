@@ -372,6 +372,7 @@
             this.UpdateBtn.TabIndex = 17;
             this.UpdateBtn.Text = "UPDATE";
             this.UpdateBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // MiddleBox
             // 

@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ClrBtn = new System.Windows.Forms.Button();
             this.AddProdBtn = new System.Windows.Forms.Button();
-            this.ExpiryDateBox = new System.Windows.Forms.TextBox();
+            this.BarCodeBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.ClrBtn);
             this.panel1.Controls.Add(this.AddProdBtn);
-            this.panel1.Controls.Add(this.ExpiryDateBox);
+            this.panel1.Controls.Add(this.BarCodeBox);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -133,22 +133,21 @@
             this.AddProdBtn.UseVisualStyleBackColor = false;
             this.AddProdBtn.Click += new System.EventHandler(this.AddProdBtn_Click);
             // 
-            // ExpiryDateBox
+            // BarCodeBox
             // 
-            this.ExpiryDateBox.Location = new System.Drawing.Point(128, 139);
-            this.ExpiryDateBox.Name = "ExpiryDateBox";
-            this.ExpiryDateBox.PlaceholderText = "YYYY/MM/DD";
-            this.ExpiryDateBox.Size = new System.Drawing.Size(132, 23);
-            this.ExpiryDateBox.TabIndex = 15;
+            this.BarCodeBox.Location = new System.Drawing.Point(128, 139);
+            this.BarCodeBox.Name = "BarCodeBox";
+            this.BarCodeBox.Size = new System.Drawing.Size(132, 23);
+            this.BarCodeBox.TabIndex = 15;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(48, 142);
+            this.label8.Location = new System.Drawing.Point(59, 142);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 15);
+            this.label8.Size = new System.Drawing.Size(63, 15);
             this.label8.TabIndex = 12;
-            this.label8.Text = "EXPIRY DATE";
+            this.label8.Text = "BAR CODE";
             // 
             // label6
             // 
@@ -326,8 +325,9 @@
             this.ProductsDataGridView.Name = "ProductsDataGridView";
             this.ProductsDataGridView.ReadOnly = true;
             this.ProductsDataGridView.RowTemplate.Height = 25;
-            this.ProductsDataGridView.Size = new System.Drawing.Size(990, 447);
+            this.ProductsDataGridView.Size = new System.Drawing.Size(741, 447);
             this.ProductsDataGridView.TabIndex = 4;
+            this.ProductsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductsDataGridView_CellContentClick);
             // 
             // MiddleBtn
             // 
@@ -421,7 +421,7 @@
         private TextBox ProductQuantityBox;
         private Label label3;
         private DataGridView ProductsDataGridView;
-        private TextBox ExpiryDateBox;
+        private TextBox BarCodeBox;
         private Button MiddleBtn;
         private Button UpdateBtn;
         private Button logOutBtn;

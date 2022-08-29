@@ -30,11 +30,12 @@
         {
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.EmployeeBtn = new System.Windows.Forms.Button();
-            this.ProductBtn = new System.Windows.Forms.Button();
             this.Home = new System.Windows.Forms.LinkLabel();
+            this.ProductBtn = new System.Windows.Forms.Button();
             this.TransDataGridView = new System.Windows.Forms.DataGridView();
             this.logOutBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.UpTabBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TransDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -45,16 +46,15 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.EmployeeBtn, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.ProductBtn, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.Home, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.ProductBtn, 0, 2);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(142, 121);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(142, 126);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // EmployeeBtn
@@ -68,17 +68,6 @@
             this.EmployeeBtn.UseVisualStyleBackColor = true;
             this.EmployeeBtn.Click += new System.EventHandler(this.EmployeeBtn_Click);
             // 
-            // ProductBtn
-            // 
-            this.ProductBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ProductBtn.Location = new System.Drawing.Point(4, 86);
-            this.ProductBtn.Name = "ProductBtn";
-            this.ProductBtn.Size = new System.Drawing.Size(134, 34);
-            this.ProductBtn.TabIndex = 3;
-            this.ProductBtn.Text = "PRODUCTS";
-            this.ProductBtn.UseVisualStyleBackColor = true;
-            this.ProductBtn.Click += new System.EventHandler(this.ProductBtn_Click);
-            // 
             // Home
             // 
             this.Home.AutoSize = true;
@@ -91,6 +80,17 @@
             this.Home.TabStop = true;
             this.Home.Text = "SALES REP";
             this.Home.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Home_LinkClicked);
+            // 
+            // ProductBtn
+            // 
+            this.ProductBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ProductBtn.Location = new System.Drawing.Point(4, 86);
+            this.ProductBtn.Name = "ProductBtn";
+            this.ProductBtn.Size = new System.Drawing.Size(134, 34);
+            this.ProductBtn.TabIndex = 3;
+            this.ProductBtn.Text = "PRODUCTS";
+            this.ProductBtn.UseVisualStyleBackColor = true;
+            this.ProductBtn.Click += new System.EventHandler(this.ProductBtn_Click);
             // 
             // TransDataGridView
             // 
@@ -126,12 +126,25 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "TRANSACTION HISTORY";
             // 
+            // UpTabBtn
+            // 
+            this.UpTabBtn.BackColor = System.Drawing.Color.Teal;
+            this.UpTabBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UpTabBtn.Location = new System.Drawing.Point(180, 97);
+            this.UpTabBtn.Name = "UpTabBtn";
+            this.UpTabBtn.Size = new System.Drawing.Size(134, 35);
+            this.UpTabBtn.TabIndex = 5;
+            this.UpTabBtn.Text = "UPDATE TABLE";
+            this.UpTabBtn.UseVisualStyleBackColor = false;
+            this.UpTabBtn.Click += new System.EventHandler(this.UpTabBtn_Click);
+            // 
             // Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.UpTabBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logOutBtn);
             this.Controls.Add(this.TransDataGridView);
@@ -155,5 +168,6 @@
         private Button logOutBtn;
         private LinkLabel Home;
         private Label label1;
+        private Button UpTabBtn;
     }
 }
